@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FitPulse — Register</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+  <section class="side">
+    <a class="mark" href="login.html">Fit<span>Pulse</span></a>
+
+    <div>
+      <div class="pulse-line">
+        <svg viewBox="0 0 300 60" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 30 H90 L105 8 L120 52 L135 30 H165 L180 14 L195 46 L210 30 H300"/>
+        </svg>
+      </div>
+      <h1>Track every rep. See every gain.</h1>
+      <p>Log your workouts, watch your numbers climb, and keep the streak alive.</p>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b>12.4K</b><span>Workouts logged</span></div>
+      <div class="stat"><b>860</b><span>Active streaks</span></div>
+      <div class="stat"><b>4.9</b><span>Avg. rating</span></div>
+    </div>
+  </section>
+
+  <main class="form-wrap">
+    <div class="auth-box">
+
+      <form id="register-form" class="auth-form" action="#" method="post" novalidate>
+        <h2>Create your account</h2>
+        <p class="lead">Set up FitPulse and start your first streak today.</p>
+
+        <div class="field">
+          <label for="register-name">Name</label>
+          <div class="input-wrap">
+            <i class="bi bi-person field-icon"></i>
+            <input type="text" id="register-name" name="name" placeholder="Jordan Lee" autocomplete="name" class="has-icon">
+          </div>
+          <span class="error-msg" id="register-name-error"></span>
+        </div>
+
+        <div class="field">
+          <label for="register-email">Email</label>
+          <div class="input-wrap">
+            <i class="bi bi-envelope field-icon"></i>
+            <input type="email" id="register-email" name="email" placeholder="you@example.com" autocomplete="email" class="has-icon">
+          </div>
+          <span class="error-msg" id="register-email-error"></span>
+        </div>
+
+        <div class="field">
+          <label for="register-password">Password</label>
+          <div class="input-wrap">
+            <i class="bi bi-lock field-icon"></i>
+            <input type="password" id="register-password" name="password" placeholder="At least 8 characters, incl. a symbol" autocomplete="new-password" class="has-icon has-icon-right">
+            <button type="button" class="toggle-password" data-target="register-password" aria-label="Show password" aria-pressed="false">
+              <i class="bi bi-eye"></i>
+            </button>
+          </div>
+          <span class="error-msg" id="register-password-error"></span>
+        </div>
+
+        <div class="field">
+          <label for="register-confirm-password">Confirm Password</label>
+          <div class="input-wrap">
+            <i class="bi bi-lock field-icon"></i>
+            <input type="password" id="register-confirm-password" name="confirm-password" placeholder="Re-enter your password" autocomplete="new-password" class="has-icon has-icon-right">
+            <button type="button" class="toggle-password" data-target="register-confirm-password" aria-label="Show password" aria-pressed="false">
+              <i class="bi bi-eye"></i>
+            </button>
+          </div>
+          <span class="error-msg" id="register-confirm-password-error"></span>
+        </div>
+
+        <p class="form-status" id="register-status"></p>
+
+        <button type="submit" id="register-submit">Create account</button>
+
+        <p class="switch">Already have an account? <a href="login.html">Log in</a></p>
+      </form>
+
+    </div>
+  </main>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+  <script src="js/register.js"></script>
+</body>
+</html>
