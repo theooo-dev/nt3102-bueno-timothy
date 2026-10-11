@@ -1,0 +1,26 @@
+# FitPulse — Code Organization with PHP Include & Form Validation
+
+Run with XAMPP/WAMP: copy this folder into `htdocs`, start Apache, open `http://localhost/FitPulse/`.
+Demo staff login: `frontdesk@ironclad.fit` / `Ironclad@2026`
+
+## Structure
+```
+index.php            main page (only include statements)
+login.php            login page
+register.php         register page
+logout.php           ends the session
+css/                 auth.css, landing.css
+js/auth.js           show/hide password toggle
+js/validation-rules.js, login.js, register.js   client-side jQuery validation (mirrors the PHP rules)
+data/users.json      registered accounts (passwords hashed)
+phpFiles/
+  core/              config, functions, validation (regex), users, auth
+  handlers/          login-handler, register-handler (form processing)
+  layout/            header, nav, footer, scripts, auth-side
+  sections/          hero, objectives, checkin, features, reports, dashboard
+  forms/             login-form, register-form, field (reusable input)
+```
+
+## Validation
+Two layers: jQuery Validation gives instant feedback in the browser, and PHP
+(`phpFiles/core/validation.php`, using `preg_match`) re-checks everything on the server.

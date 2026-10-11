@@ -1,0 +1,362 @@
+:root {
+  --bg: #0E0F11;
+  --panel: #17181B;
+  --line: #2A2C30;
+  --ink: #F2F1EC;
+  --ink-muted: #9092A0;
+  --pulse: #FF4433;
+}
+
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section,
+header {
+  scroll-margin-top: 82px;
+}
+
+section {
+  padding: 80px 0;
+}
+
+/* ---- Utility helpers ---- */
+.text-pulse {
+  color: var(--pulse);
+}
+
+.bg-panel {
+  background: var(--panel);
+}
+
+.border-hair {
+  border: 1px solid var(--line) !important;
+}
+
+.text-muted-ink {
+  color: var(--ink-muted);
+}
+
+.section-label {
+  margin-bottom: .5rem;
+  color: var(--pulse);
+  font-size: .85rem;
+  font-weight: 600;
+}
+
+/* 
+   Navbar
+   */
+
+.navbar {
+  background: rgba(14, 15, 17, .9);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(6px);
+}
+
+.navbar-brand span {
+  color: var(--pulse);
+}
+
+.nav-link {
+  color: var(--ink-muted) !important;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--ink) !important;
+}
+
+/* ---- Buttons ---- */
+.btn-pulse {
+  background: var(--pulse);
+  border: none;
+  color: #0E0F11;
+  font-weight: 600;
+}
+
+.btn-pulse:hover {
+  background: #ff5a4d;
+  color: #0E0F11;
+}
+
+.btn-outline-pulse {
+  border: 1px solid var(--line);
+  color: var(--ink);
+}
+
+.btn-outline-pulse:hover {
+  border-color: var(--pulse);
+  color: var(--pulse);
+}
+
+/*
+   Hero
+   */
+
+.hero {
+  padding: 120px 0 90px;
+  background: radial-gradient(circle at 80% 10%, rgba(255, 68, 51, .14), transparent 55%);
+}
+
+.hero h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.hero p.lead {
+  max-width: 46ch;
+  color: var(--ink-muted);
+}
+
+.stat b {
+  display: block;
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+.stat span {
+  color: var(--ink-muted);
+  font-size: .85rem;
+}
+
+.qr-box {
+  width: 180px;
+  height: 180px;
+  background:
+    repeating-linear-gradient(0deg, var(--pulse) 0 6px, transparent 6px 12px),
+    repeating-linear-gradient(90deg, var(--pulse) 0 6px, transparent 6px 12px);
+  background-blend-mode: screen;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  opacity: .9;
+}
+
+/*
+   Feature cards
+   */
+
+.card-feature {
+  height: 100%;
+  padding: 28px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.card-feature h3 {
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.card-feature p {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: .92rem;
+}
+
+.icon-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 16px;
+  background: rgba(255, 68, 51, .12);
+  color: var(--pulse);
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+/*
+   Accordion (Features section)
+   */
+
+.accordion-item {
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+
+.accordion-button {
+  background: var(--panel);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.accordion-button:not(.collapsed) {
+  background: var(--panel);
+  color: var(--pulse);
+  box-shadow: none;
+}
+
+.accordion-button::after {
+  filter: invert(1);
+}
+
+.accordion-body {
+  color: var(--ink-muted);
+}
+
+/*
+   Dashboard preview
+   */
+
+.dash-frame {
+  padding: 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+
+.dash-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--line);
+}
+
+.dash-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-right: 8px;
+  background: var(--pulse);
+  border-radius: 50%;
+}
+
+.dash-stat {
+  padding: 16px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+
+.dash-stat b {
+  display: block;
+  font-size: 1.5rem;
+}
+
+.dash-stat span {
+  color: var(--ink-muted);
+  font-size: .8rem;
+}
+
+/* ---- Bar chart ---- */
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 130px;
+}
+
+.bar-chart .bar {
+  position: relative;
+  flex: 1;
+  background: linear-gradient(180deg, var(--pulse), rgba(255, 68, 51, .35));
+  border-radius: 4px 4px 0 0;
+}
+
+.bar-chart .bar-label {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: var(--ink-muted);
+  font-size: .7rem;
+}
+
+/* ---- Donut chart ---- */
+.donut {
+  position: relative;
+  width: 130px;
+  height: 130px;
+  background: conic-gradient(var(--pulse) 0 62%, #E0B04A 62% 82%, #4B4D53 82% 100%);
+  border-radius: 50%;
+}
+
+.donut::after {
+  content: "";
+  position: absolute;
+  inset: 16px;
+  background: var(--panel);
+  border-radius: 50%;
+}
+
+.legend-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-right: 6px;
+  border-radius: 50%;
+}
+
+/* ---- Recent check-ins table ---- */
+.table-dash {
+  color: var(--ink);
+}
+
+.table-dash > :not(caption) > * > * {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.badge-good {
+  background: rgba(52, 199, 89, .15);
+  color: #34C759;
+}
+
+.badge-soon {
+  background: rgba(224, 176, 74, .15);
+  color: #E0B04A;
+}
+
+.badge-late {
+  background: rgba(255, 68, 51, .15);
+  color: var(--pulse);
+}
+
+/*
+   Logged-in welcome banner
+   */
+
+.welcome-banner {
+  padding: 12px 18px;
+  margin-top: 14px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: .92rem;
+}
+
+.welcome-banner strong {
+  color: var(--pulse);
+}
+
+/*
+   Footer
+   */
+
+footer {
+  padding: 40px 0;
+  border-top: 1px solid var(--line);
+  color: var(--ink-muted);
+  font-size: .9rem;
+}
